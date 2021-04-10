@@ -23,9 +23,9 @@ class CheckForLatestVersion(context: Context,fileURL: String) {
     init {
         this.fileUrl = fileURL
         this.context = context
-        downloadFile()
+
     }
-   private fun downloadFile()
+   private fun getVersion() : Int?
     {
         var newVersionAvailable : Boolean =  false
         val handler = Handler()
@@ -73,8 +73,9 @@ class CheckForLatestVersion(context: Context,fileURL: String) {
                         }.start()
                     } catch (e: java.lang.Exception) { // error, do something
                     }
+        return versionCode
 
     }
 
-    fun getVersionCode() : Int { return  versionCode!! }
+
 }
