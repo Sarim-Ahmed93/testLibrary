@@ -51,17 +51,20 @@ class CheckForLatestVersion(context: Context,fileURL: String) {
                                         if (obj != null) {versionCode = obj.getInt("versionCode")
                                             Log.d("MainActivity", " "+versionCode)
                                         }
-                                        /*val manager: PackageManager = context.getPackageManager()
+                                        val manager: PackageManager = context.getPackageManager()
                                         val info: PackageInfo = manager.getPackageInfo(context.getPackageName(), 0)
-                                        val currentVersion = info.longVersionCode*/
-                                        /*if(versionCode!! >currentVersion)
+                                        val currentVersion = info.versionCode
+                                        if(versionCode!! >currentVersion)
                                         {
                                             newVersionAvailable = true
+                                            Log.d("MainActivity", "latest version available current version is ${currentVersion}")
                                         }
                                         else
                                         {
                                             newVersionAvailable = false
-                                        }*/
+                                            Log.d("MainActivity", "version is latest current version is ${currentVersion}")
+
+                                        }
                                     } catch (e: JSONException) {
                                     } finally {
                                     }
