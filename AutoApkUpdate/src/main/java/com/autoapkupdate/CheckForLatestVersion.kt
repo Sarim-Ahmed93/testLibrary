@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.os.Handler
+import android.util.Log
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -47,7 +48,9 @@ class CheckForLatestVersion(context: Context,fileURL: String) {
                                     try {
                                         val json = stringBuilder.toString()
                                         val obj = JSONObject(json)
-                                        if (obj != null) {versionCode = obj.getInt("versionCode")}
+                                        if (obj != null) {versionCode = obj.getInt("versionCode")
+                                            Log.d("MainActivity", " "+versionCode)
+                                        }
                                         /*val manager: PackageManager = context.getPackageManager()
                                         val info: PackageInfo = manager.getPackageInfo(context.getPackageName(), 0)
                                         val currentVersion = info.longVersionCode*/
