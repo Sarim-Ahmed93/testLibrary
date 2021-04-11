@@ -26,7 +26,7 @@ class CheckForLatestVersion(context: Context,fileURL: String) {
         this.context = context
 
     }
-   private fun getVersion() : Int?
+    fun getVersion() : Int?
     {
         var newVersionAvailable : Boolean =  false
         val handler = Handler()
